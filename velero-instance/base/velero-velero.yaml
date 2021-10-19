@@ -1,0 +1,13 @@
+apiVersion: oadp.openshift.io/v1alpha1
+kind: Velero
+metadata:
+  name: velero
+spec:
+  olm_managed: true
+  default_velero_plugins:
+    - aws
+    - csi
+    - vsphere
+  velero_feature_flags: EnableCSI,EnableLocalMode
+  enable_restic: true
+  use_upstream_images: true
