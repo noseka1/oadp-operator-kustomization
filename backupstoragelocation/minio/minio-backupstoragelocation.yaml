@@ -1,0 +1,20 @@
+apiVersion: velero.io/v1
+kind: BackupStorageLocation
+metadata:
+  name: minio
+spec:
+  provider: aws
+  objectStorage:
+    bucket: mybucket-1
+    prefix: velero
+  config:
+    s3Url: https://minio-minio.apps.cluster-1330.sandbox634.opentlc.com
+    s3ForcePathStyle: "true"
+    region: minio
+    insecureSkipTLSVerify: "true"
+  accessMode: ReadWrite
+  credential:
+    name: minio-credentials
+    key: data
+  # Default indicates this location is the default backup storage location
+  default: True
