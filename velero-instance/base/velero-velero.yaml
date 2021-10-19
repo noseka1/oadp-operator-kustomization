@@ -11,3 +11,6 @@ spec:
   velero_feature_flags: EnableCSI,EnableLocalMode
   enable_restic: true
   use_upstream_images: true
+  # If you need to install Velero without a default backup storage location
+  # NoDefaultBackupLocation flag is required for confirmation
+  noDefaultBackupLocation: true
