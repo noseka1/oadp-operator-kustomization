@@ -2,6 +2,12 @@
 
 See also oadp operator [documentation](https://github.com/openshift/oadp-operator/tree/master/docs).
 
+# Velero Client
+
+Configure Velero client to use non-default namespace `oadp-operator`:
+
+$ velero client config set namespace=oadp-operator
+
 # Backing up CSI Volume
 
 The respective volumesnapshotclass must have the `velero.io/csi-volumesnapshot-class=true` label:
