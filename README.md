@@ -6,7 +6,9 @@ See also oadp operator [documentation](https://github.com/openshift/oadp-operato
 
 Configure Velero client to use non-default namespace `oadp-operator`:
 
+```
 $ velero client config set namespace=oadp-operator
+```
 
 # Backing up CSI Volume
 
