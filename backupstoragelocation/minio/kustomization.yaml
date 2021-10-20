@@ -5,4 +5,4 @@ namespace: oadp-operator
 
 resources:
 - minio-backupstoragelocation.yaml
-- minio-credentials-secret.yaml
+- minio-client-credentials-secret.yaml
