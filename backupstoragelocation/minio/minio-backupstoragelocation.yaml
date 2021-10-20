@@ -14,7 +14,7 @@ spec:
     #insecureSkipTLSVerify: "true"
   accessMode: ReadWrite
   credential:
-    name: minio-credentials
+    name: minio-client-credentials
     key: data
   # Default indicates this location is the default backup storage location
   default: True
