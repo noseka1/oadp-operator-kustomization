@@ -4,7 +4,7 @@ See also oadp operator [documentation](https://github.com/openshift/oadp-operato
 
 # Backing up CSI Volume
 
-The respective volumesnapshotclass must have the velero.io/csi-volumesnapshot-class=true label:
+The respective volumesnapshotclass must have the `velero.io/csi-volumesnapshot-class=true` label:
 
 ```
 $ oc label volumesnapshotclass ocs-storagecluster-rbdplugin-snapclass velero.io/csi-volumesnapshot-class=true
