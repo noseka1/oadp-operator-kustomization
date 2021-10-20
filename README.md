@@ -10,6 +10,8 @@ Configure Velero client to use non-default namespace `oadp-operator`:
 $ velero client config set namespace=oadp-operator
 ```
 
+Velero client configuration file can be found at `~/.config/velero/config.json`
+
 # Backing up CSI Volume
 
 The respective volumesnapshotclass must have the `velero.io/csi-volumesnapshot-class=true` label:
