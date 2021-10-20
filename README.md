@@ -48,13 +48,25 @@ EOF
 Create a backup:
 
 ```
-$ velero backup create mybackup --namespace oadp-operator --include-namespaces volume-test
+$ velero backup create mybackup --include-namespaces volume-test
 ```
 
 Check the backup status:
 
 ```
 $ oc get backup -n oadp-operator mybackup -o yaml
+```
+
+Create a test restore project:
+
+```
+$ oc create namespace volume-test-restore
+```
+
+Restore the backup:
+
+```
+$ velero restore create myrestore --from-backup mybackup --namespace-mappings volume-test:volume-test-restore
 ```
 
 Delete the backup if not needed any longer:
