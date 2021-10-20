@@ -12,7 +12,9 @@ $ oc label volumesnapshotclass ocs-storagecluster-rbdplugin-snapclass velero.io/
 
 Create a test project:
 
+```
 $ oc create namespace volume-test
+```
 
 Create a PVC to back up:
 
