@@ -3,14 +3,16 @@ kind: Velero
 metadata:
   name: velero
 spec:
-  olm_managed: true
-  default_velero_plugins:
+  olmManaged: true
+  defaultVeleroPlugins:
     - aws
     - csi
     - vsphere
-  velero_feature_flags: EnableCSI,EnableLocalMode
-  enable_restic: true
-  use_upstream_images: true
+  veleroFeatureFlags:
+    - EnableCSI
+    - EnableLocalMode
+  enableRestic: true
+  useUpstreamImages: true
   # If you need to install Velero without a default backup storage location
   # NoDefaultBackupLocation flag is required for confirmation
   noDefaultBackupLocation: true
