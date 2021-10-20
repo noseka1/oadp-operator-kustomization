@@ -8,10 +8,10 @@ spec:
     bucket: mybucket-1
     prefix: velero
   config:
-    s3Url: https://minio-minio.apps.cluster-1330.sandbox634.opentlc.com
+    s3Url: http://minio.oadp-operator.svc.cluster.local:9000
     s3ForcePathStyle: "true"
     region: minio
-    insecureSkipTLSVerify: "true"
+    #insecureSkipTLSVerify: "true"
   accessMode: ReadWrite
   credential:
     name: minio-credentials
