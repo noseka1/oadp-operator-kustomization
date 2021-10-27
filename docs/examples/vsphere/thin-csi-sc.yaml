@@ -5,3 +5,6 @@ metadata:
   annotations:
     storageclass.kubernetes.io/is-default-class: "true"
 provisioner: csi.vsphere.vmware.com
+allowVolumeExpansion: true
+parameters:
+#  storagePolicyName: VM Encryption Policy
