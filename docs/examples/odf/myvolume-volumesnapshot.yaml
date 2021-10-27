@@ -1,8 +1,8 @@
 apiVersion: snapshot.storage.k8s.io/v1
 kind: VolumeSnapshot
 metadata:
-  name: ceph-rbd-snapshot
+  name: myvolume
 spec:
   volumeSnapshotClassName: ocs-storagecluster-rbdplugin-snapclass
   source:
-    persistentVolumeClaimName: ceph-rbd-volumeclaim
+    persistentVolumeClaimName: myvolume
