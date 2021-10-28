@@ -73,3 +73,59 @@ Delete the backup if not needed any longer:
 ```
 $ oc delete backup -n oadp-operator mybackup
 ```
+
+# Backup and Restore of vSphere Volumes
+
+Create a test project:
+
+```
+$ oc create namespace volume-test
+```
+
+Create a PVC to back up:
+
+```
+$ oc create --filename - <<EOF
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: myvolume
+spec:
+  storageClassName: thin-csi
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 10Mi
+EOF
+```
+
+Create a backup:
+
+```
+$ velero backup create mybackup --include-namespaces volume-test
+```
+
+Check the backup status:
+
+```
+$ oc get backup -n oadp-operator mybackup -o yaml
+```
+
+Create a test restore project:
+
+```
+$ oc create namespace volume-test-restore
+```
+
+Restore the backup:
+
+```
+$ velero restore create myrestore --from-backup mybackup --namespace-mappings volume-test:volume-test-restore
+```
+
+Delete the backup if not needed any longer:
+
+```
+$ oc delete backup -n oadp-operator mybackup
+```
