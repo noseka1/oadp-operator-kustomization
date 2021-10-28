@@ -129,3 +129,17 @@ Delete the backup if not needed any longer:
 ```
 $ oc delete backup -n oadp-operator mybackup
 ```
+
+# Troubleshooting
+
+Scale the oadp operator down to zero replicas:
+
+```
+$ oc edit csv oadp-operator.v0.4.0
+```
+
+Add `--log-level=debug` to the server command-line:
+
+```
+$ oc edit deploy velero
+```
