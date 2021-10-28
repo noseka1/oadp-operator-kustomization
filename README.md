@@ -12,7 +12,7 @@ $ velero client config set namespace=oadp-operator
 
 Velero client configuration file can be found at `~/.config/velero/config.json`
 
-# Backing up CSI Volume
+# Backup and Restore of CSI Volumes
 
 The respective volumesnapshotclass must have the `velero.io/csi-volumesnapshot-class=true` label:
 
