@@ -33,8 +33,7 @@ $ oc create --filename - <<EOF
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: ceph-rbd-volumeclaim
-  namespace: volume-test
+  name: myvolume
 spec:
   storageClassName: ocs-storagecluster-ceph-rbd
   accessModes:
