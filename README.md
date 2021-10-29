@@ -103,7 +103,7 @@ EOF
 Create a backup:
 
 ```
-$ velero backup create mybackup --include-namespaces volume-test
+$ velero backup create mybackup --include-namespaces volume-test --snapshot-volumes --volume-snapshot-locations vsphere
 ```
 
 Check the backup status:
