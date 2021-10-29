@@ -11,6 +11,8 @@ spec:
     s3Url: http://minio.oadp-operator.svc.cluster.local:9000
     s3ForcePathStyle: "true"
     region: minio
+    # Choose a profile from the AWS config file
+    profile: default
     #insecureSkipTLSVerify: "true"
   accessMode: ReadWrite
   credential:
