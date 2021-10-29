@@ -6,13 +6,32 @@ spec:
   olmManaged: true
   defaultVeleroPlugins:
     - aws
-    - csi
-    - vsphere
-  veleroFeatureFlags:
-    - EnableCSI
-    - EnableLocalMode
-  enableRestic: true
-  useUpstreamImages: true
+  customVeleroPlugins:
+    # OADP operator doesn't support vsphere on the default Velero plugin list.
+    # Need to enable vsphere plugin as a custom Velero plugin.
+    - name: vsphere
+      image: vsphereveleroplugin/velero-plugin-for-vsphere:v1.3.0-rc2
+  enableRestic: false
   # If you need to install Velero without a default backup storage location
   # NoDefaultBackupLocation flag is required for confirmation
-  noDefaultBackupLocation: true
+  noDefaultBackupLocation: false
+  backupStorageLocations:
+    provider: aws
+    objectStorage:
+      # Name of an existing bucket
+      bucket: mybucket-1
+      # In the bucket, a prefix subdirectory will be created
+      prefix: velero
+    config:
+      s3Url: http://minio.oadp-operator.svc.cluster.local:9000
+      s3ForcePathStyle: "true"
+      region: minio
+      # Choose a profile from the AWS config file
+      profile: default
+      #insecureSkipTLSVerify: "true"
+    accessMode: ReadWrite
+    credential:
+      name: cloud-credentials
+      key: data
+    # Default indicates this location is the default backup storage location
+    default: True
