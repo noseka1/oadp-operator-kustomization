@@ -12,5 +12,3 @@ spec:
     # If local mode is enabled, Velero vSphere plugin will skip the upload of volume
     # snapshots to S3. The datamgr-for-vsphere-plugin pod won't be deployed at all.
     #- EnableLocalMode
-  volumeSnapshotLocations:
-    - provider: velero.io/vsphere

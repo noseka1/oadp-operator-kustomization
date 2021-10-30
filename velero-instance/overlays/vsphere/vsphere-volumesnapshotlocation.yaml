@@ -1,0 +1,7 @@
+apiVersion: velero.io/v1
+kind: VolumeSnapshotLocation
+metadata:
+  name: vsphere
+  namespace: oadp-operator
+spec:
+  provider: velero.io/vsphere
