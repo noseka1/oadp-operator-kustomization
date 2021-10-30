@@ -59,7 +59,7 @@ $ oc get backup -n oadp-operator mybackup -o yaml
 Create a test restore project:
 
 ```
-$ oc create namespace volume-test-restore
+$ oc new-project volume-test-restore
 ```
 
 Restore the backup:
@@ -115,7 +115,7 @@ $ oc get backup -n oadp-operator mybackup -o yaml
 Create a test restore project:
 
 ```
-$ oc create namespace volume-test-restore
+$ oc new-project volume-test-restore
 ```
 
 Restore the backup:
