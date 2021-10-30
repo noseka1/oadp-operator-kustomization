@@ -23,7 +23,7 @@ $ oc label volumesnapshotclass ocs-storagecluster-rbdplugin-snapclass velero.io/
 Create a test project:
 
 ```
-$ oc create namespace volume-test
+$ oc new-project volume-test
 ```
 
 Create a PVC to back up:
@@ -79,7 +79,7 @@ $ oc delete backup -n oadp-operator mybackup
 Create a test project:
 
 ```
-$ oc create namespace volume-test
+$ oc new-project volume-test
 ```
 
 Create a PVC to back up:
