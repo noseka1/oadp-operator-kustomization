@@ -68,6 +68,12 @@ Restore the backup:
 $ velero restore create myrestore --from-backup mybackup --namespace-mappings volume-test:volume-test-restore
 ```
 
+Check the restore status:
+
+```
+$ oc get restore -n oadp-operator myrestore -o yaml
+```
+
 Delete the backup if not needed any longer:
 
 ```
@@ -122,6 +128,12 @@ Restore the backup:
 
 ```
 $ velero restore create myrestore --from-backup mybackup --namespace-mappings volume-test:volume-test-restore
+```
+
+Check the restore status:
+
+```
+$ oc get restore -n oadp-operator myrestore -o yaml
 ```
 
 Delete the backup if not needed any longer:
