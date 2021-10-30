@@ -17,7 +17,9 @@ Velero client configuration file can be found at `~/.config/velero/config.json`
 The respective volumesnapshotclass must have the `velero.io/csi-volumesnapshot-class=true` label:
 
 ```
-$ oc label volumesnapshotclass ocs-storagecluster-rbdplugin-snapclass velero.io/csi-volumesnapshot-class=true
+$ oc label \
+    volumesnapshotclass \
+    ocs-storagecluster-rbdplugin-snapclass velero.io/csi-volumesnapshot-class=true
 ```
 
 Create a test project:
@@ -65,7 +67,10 @@ $ oc new-project volume-test-restore
 Restore the backup:
 
 ```
-$ velero restore create myrestore --from-backup mybackup --namespace-mappings volume-test:volume-test-restore
+$ velero restore create \
+    myrestore \
+    --from-backup mybackup \
+    --namespace-mappings volume-test:volume-test-restore
 ```
 
 Check the restore status:
@@ -109,7 +114,11 @@ EOF
 Create a backup:
 
 ```
-$ velero backup create mybackup --include-namespaces volume-test --snapshot-volumes --volume-snapshot-locations vsphere
+$ velero backup create \
+    mybackup \
+    --include-namespaces volume-test \
+    --snapshot-volumes \
+    --volume-snapshot-locations vsphere
 ```
 
 Check the backup status:
@@ -127,7 +136,10 @@ $ oc new-project volume-test-restore
 Restore the backup:
 
 ```
-$ velero restore create myrestore --from-backup mybackup --namespace-mappings volume-test:volume-test-restore
+$ velero restore create \
+    myrestore \
+    --from-backup mybackup \
+    --namespace-mappings volume-test:volume-test-restore
 ```
 
 Check the restore status:
