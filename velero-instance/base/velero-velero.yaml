@@ -11,22 +11,22 @@ spec:
   # NoDefaultBackupLocation flag is required for confirmation
   noDefaultBackupLocation: false
   backupStorageLocations:
-    provider: aws
-    objectStorage:
-      # Name of an existing bucket
-      bucket: mybucket-1
-      # In the bucket, a prefix subdirectory will be created
-      prefix: velero
-    config:
-      s3Url: http://minio.oadp-operator.svc.cluster.local:9000
-      s3ForcePathStyle: "true"
-      region: minio
-      # Choose a profile from the AWS config file
-      profile: default
-      #insecureSkipTLSVerify: "true"
-    accessMode: ReadWrite
-    credential:
-      name: cloud-credentials
-      key: data
-    # Default indicates this location is the default backup storage location
-    default: True
+    - provider: aws
+      objectStorage:
+        # Name of an existing bucket
+        bucket: mybucket-1
+        # In the bucket, a prefix subdirectory will be created
+        prefix: velero
+      config:
+        s3Url: http://minio.oadp-operator.svc.cluster.local:9000
+        s3ForcePathStyle: "true"
+        region: minio
+        # Choose a profile from the AWS config file
+        profile: default
+        #insecureSkipTLSVerify: "true"
+      accessMode: ReadWrite
+      credential:
+        name: cloud-credentials
+        key: data
+      # Default indicates this location is the default backup storage location
+      default: True
