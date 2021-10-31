@@ -154,6 +154,12 @@ Check the restore status:
 $ oc get restore -n oadp-operator myrestore -o yaml
 ```
 
+Check the backup download status:
+
+```
+$ oc get download -n oadp-operator -o yaml download-916f7fba-39d4-4a96-bc64-770d931b6c2a-3205911d-6026-4d09-a8da-ab3c4dba4992
+```
+
 Delete the backup from the S3 storage. After that, delete the backup in OpenShift:
 
 ```
