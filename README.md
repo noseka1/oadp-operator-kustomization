@@ -79,7 +79,7 @@ Check the restore status:
 $ oc get restore -n oadp-operator myrestore -o yaml
 ```
 
-Delete the backup if not needed any longer:
+Delete the backup from the S3 storage. After that, delete the backup in OpenShift:
 
 ```
 $ oc delete backup -n oadp-operator mybackup
@@ -127,6 +127,12 @@ Check the backup status:
 $ oc get backup -n oadp-operator mybackup -o yaml
 ```
 
+Check that the backup was correctly uploaded into the S3 storage:
+
+```
+$ oc get upload -n oadp-operator -o yaml upload-77b1db62-ad5d-41bb-a867-72392fac816e
+```
+
 Create a test restore project:
 
 ```
@@ -148,7 +154,7 @@ Check the restore status:
 $ oc get restore -n oadp-operator myrestore -o yaml
 ```
 
-Delete the backup if not needed any longer:
+Delete the backup from the S3 storage. After that, delete the backup in OpenShift:
 
 ```
 $ oc delete backup -n oadp-operator mybackup
