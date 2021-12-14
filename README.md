@@ -2,7 +2,13 @@
 
 See also oadp operator [documentation](https://github.com/openshift/oadp-operator/tree/master/docs).
 
-# Velero Client
+## Deploying OADP Operator
+
+```
+$ oc apply --kustomize oadp-operator/base
+```
+
+## Velero Client
 
 Configure Velero client to use non-default namespace `oadp-operator`:
 
@@ -12,7 +18,7 @@ $ velero client config set namespace=oadp-operator
 
 Velero client configuration file can be found at `~/.config/velero/config.json`
 
-# Backup and Restore of CSI Volumes
+## Backup and Restore of CSI Volumes
 
 The respective volumesnapshotclass must have the `velero.io/csi-volumesnapshot-class=true` label:
 
@@ -85,7 +91,7 @@ Delete the backup from the S3 storage. After that, delete the backup in OpenShif
 $ oc delete backup -n oadp-operator mybackup
 ```
 
-# Backup and Restore of vSphere Volumes
+## Backup and Restore of vSphere Volumes
 
 Create a test project:
 
@@ -166,7 +172,7 @@ Delete the backup from the S3 storage. After that, delete the backup in OpenShif
 $ oc delete backup -n oadp-operator mybackup
 ```
 
-# Troubleshooting
+## Troubleshooting
 
 Scale the oadp operator down to zero replicas:
 
