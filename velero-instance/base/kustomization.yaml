@@ -4,5 +4,5 @@ kind: Kustomization
 namespace: oadp-operator
 
 resources:
-- velero-velero.yaml
+- velero-dataprotectionapplication.yaml
 - cloud-credentials-secret.yaml

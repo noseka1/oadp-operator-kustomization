@@ -5,7 +5,4 @@ bases:
   - ../../base
 
 patchesStrategicMerge:
-- velero-velero.yaml
-
-resources:
-- vsphere-volumesnapshotlocation.yaml
+- velero-dataprotectionapplication.yaml

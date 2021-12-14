@@ -1,0 +1,19 @@
+apiVersion: oadp.openshift.io/v1alpha1
+kind: DataProtectionApplication
+metadata:
+  name: velero
+spec:
+  configuration:
+    velero:
+      customPlugins:
+        # OADP operator doesn't support vsphere on the default Velero plugin list.
+        # Need to enable vsphere plugin as a custom Velero plugin.
+        - name: vsphere
+          image: vsphereveleroplugin/velero-plugin-for-vsphere:v1.3.0-rc2
+      featureFlags:
+        # If local mode is enabled, Velero vSphere plugin will skip the upload of volume
+        # snapshots to S3. The datamgr-for-vsphere-plugin pod won't be deployed at all.
+        #- EnableLocalMode
+  snapshotLocations:
+    - velero:
+        provider: velero.io/vsphere

@@ -1,0 +1,14 @@
+apiVersion: oadp.openshift.io/v1alpha1
+kind: DataProtectionApplication
+metadata:
+  name: velero
+spec:
+  configuration:
+    velero:
+      defaultPlugins:
+        - aws
+        - csi
+      featureFlags:
+        # OADP operator sets the EnableCSI feature flag automatically if the csi plugin
+        # was included in the defaultVeleroPlugins list.
+        #- EnableCSI
